@@ -37,15 +37,3 @@ jobs:
 
             - name: Build
               run: pnpm buildStandalone
-
-            - name: Generate plugin list
-              run: pnpm generatePluginJson dist/vencordplugins.json
-
-            - name: Generate Equicord plugin list
-              run: pnpm generateEquicordPluginJson dist/equicordplugins.json
-
-                  cp ../dist/release/*plugins.json .
-                  git add -A
-
-                  git commit -m "Plugins for https://github.com/$GITHUB_REPOSITORY/commit/$GITHUB_SHA"
-                  git push --force https://$USERNAME:$GITHUB_TOKEN@github.com/$REPO.git
